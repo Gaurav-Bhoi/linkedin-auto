@@ -1,0 +1,63 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.*.local
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Coverage reports
+coverage/
+
+# Husky & lint-staged
+.husky/_/ # internal husky files
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Optional: lock files if you're using only one package manager
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ESLint and Prettier cache
+.eslintcache
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional: ignore local test results or screenshots
+test-results/
+screenshots/
+
+# Optional: ignore local bin or temp folders
+tmp/
+temp/
+bin/
