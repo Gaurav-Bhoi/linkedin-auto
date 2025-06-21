@@ -43,8 +43,8 @@ coverage/
 Thumbs.db
 
 # Optional: lock files if you're using only one package manager
-# package-lock.json
-# yarn.lock
+package-lock.json
+yarn.lock
 # pnpm-lock.yaml
 
 # ESLint and Prettier cache
@@ -61,3 +61,5 @@ screenshots/
 tmp/
 temp/
 bin/
+
+architecture.txt

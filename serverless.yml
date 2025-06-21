@@ -1,0 +1,15 @@
+service: lnkdn-auto
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+  stage: production
+
+functions:
+  hello:
+    handler: index.handler
+    events:
+      - http:
+          path: /
+          method: get

@@ -1,0 +1,46 @@
+src/
+├── modules/
+│   ├── linkedin/                         # Bounded context for LinkedIn
+│   │   ├── domain/                       # Pure domain logic (no framework stuff)
+│   │   │   ├── entities/                 # Domain entities (e.g., LinkedInProfile, LinkedInPost)
+│   │   │   ├── value-objects/            # Email, URL, Token, etc.
+│   │   │   ├── repositories/             # Interfaces (abstract contracts)
+│   │   │   └── services/                 # Domain services (e.g., sync logic)
+│   │   │
+│   │   ├── application/                  # Application layer (use-cases)
+│   │   │   └── use-cases/                # FetchConnectionsUseCase, PostContentUseCase, etc.
+│   │   │
+│   │   ├── infrastructure/              # External tech (DB, HTTP, 3rd party API)
+│   │   │   ├── api-clients/             # LinkedIn HTTP API wrapper (axios etc.)
+│   │   │   ├── repositories/            # Concrete implementations of repo interfaces
+│   │   │   └── database/                # Mongoose/Prisma/SQL models (if any)
+│   │   │
+│   │   ├── interfaces/                   # Controllers & routes (inbound)
+│   │   │   └── http/
+│   │   │       ├── controllers/         # LinkedInController.ts
+│   │   │       ├── routes/              # linkedin.routes.ts
+│   │   │       └── validators/          # Input validation
+│   │   │
+│   │   └── index.ts                     # Exports routes, adapters, etc.
+│   │
+│   ├── facebook/
+│   ├── instagram/
+│   └── youtube/
+│
+├── shared/                               # Cross-cutting concerns
+│   ├── domain/                           # Shared base entities, value-objects
+│   ├── infrastructure/                   # Axios wrapper, token refresh, base repository
+│   └── utils/                            # Date helpers, string utils, etc.
+│
+├── core/                                 # App-wide setup
+│   ├── config/                           # env.ts, api keys, etc.
+│   ├── middlewares/                      # Error handler, auth middleware
+│   ├── services/                         # Logger, mailer, scheduler, queue
+│   ├── app.ts                            # Express app & DI setup
+│   └── server.ts                         # Entry point to start server
+│
+├── jobs/                                 # Scheduled sync/cron/queue jobs (optional)
+│   ├── linkedinSync.job.ts
+│   └── ...
+│
+└── main.ts                               # Starts the app

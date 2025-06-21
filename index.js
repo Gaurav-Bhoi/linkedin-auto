@@ -1,8 +1,13 @@
 import './config/envloader.js';
 import app from './src/app.js';
+import serverlessExpress from '@codegenie/serverless-express';
 
-const PORT = process.env.PORT || 3000;
+let handler;
 
-app.listen(PORT, () => {
-  console.log('server is running on port', PORT);
-});
+if (process.env.NODE_ENV === 'production') {
+  handler = serverlessExpress({ app });
+} else {
+  app.listen(3000, () => console.log('Server is running on port 3000'));
+}
+
+export { handler };
