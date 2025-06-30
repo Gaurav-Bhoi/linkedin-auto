@@ -1,5 +1,6 @@
 import open from 'open';
 import axios from 'axios';
+import { postCron } from '../../../../../jobs/Linkedin/postCron.js';
 class LinkedinController {
   constructor() {}
 
@@ -36,6 +37,11 @@ class LinkedinController {
     );
 
     console.log('this is access token', accessToken);
+  };
+
+  makePost = async (req, res) => {
+    postCron.start();
+    res.json('linkedin post successful');
   };
 }
 export default new LinkedinController();

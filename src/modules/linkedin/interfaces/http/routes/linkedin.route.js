@@ -7,5 +7,6 @@ const linkedinRouter = Router();
 linkedinRouter.get('/login', LinkedinController.handleLogin);
 linkedinRouter.get('/getAccessToken', LinkedinController.getAccessToken);
 linkedinRouter.get('/authorizationCallback', LinkedinController.getAccessToken);
+linkedinRouter.get('/post', LinkedinController.makePost);
 
 export default linkedinRouter;
