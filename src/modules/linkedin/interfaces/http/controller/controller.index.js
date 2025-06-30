@@ -1,3 +1,3 @@
-import { linkedinPostController } from './liknedin.controller.js';
+import LinkedinController from './liknedin.controller.js';
 
-export { linkedinPostController };
+export { LinkedinController };

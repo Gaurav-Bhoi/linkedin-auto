@@ -2,7 +2,6 @@ import OpenAI from 'openai';
 
 export class OpenAIService {
   constructor() {
-    console.log('this is from openai service class');
     this.openaiClient = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
   }
 
@@ -22,8 +21,6 @@ export class OpenAIService {
       // });
 
       return response;
-    } catch (error) {
-      console.log('this is image generation error', error);
-    }
+    } catch (error) {}
   }
 }

@@ -17,7 +17,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 # Optional: include production environment file
-COPY .env.production ./
+COPY .env.development ./
 
 # Set command to run the Lambda handler
 CMD ["index.handler"]
